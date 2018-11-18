@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NB2 Sketch</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <!--<link href="bootstrap.min.css" rel="stylesheet">-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-new.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Navbar -->
+        <div id="main-navbar" class="nav-header" >
+            <nav class="navbar navbar-default navbar-custom">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">
+                                    Toggle navigation
+                                </span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">Hovedmeny</a></div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="index.html">Nytt søk</a></li>
+                            <li class=""><a href="#/sales">Salgssjef</a></li>
+                        </ul>
+                        <p class="navbar-text navbar-right">Sign out</p>
+                        <!--<form class="navbar-form navbar-right">-->
+                        <!--<div class="form-group">-->
+                        <!--<select class="select-equipments form-control" id="global-filter">-->
+                        <!--<option value="0">All</option>-->
+                        <!--<option value="1">ForSale</option>-->
+                        <!--<option value="2">Sold</option>-->
+                        <!--</select>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                        <!--<select class="select-equipments form-control" id="availability-filter">-->
+                        <!--<option value="1">all</option>-->
+                        <!--<option value="2">authorized reseller</option>-->
+                        <!--<option value="3">other reseller</option>-->
+                        <!--<option value="4">private</option>-->
+                        <!--</select>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash;<button type="submit" class="btn btn-default">Submit</button>&ndash;&gt;-->
+                        <!--</form>-->
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="page-wrapper">
+
+            <div class="page-header">
+                <img src="images/main-logo.png" alt="" class="page-header__image">
+            </div>
+
+            <!-- Selected equipment -->
+            <div class="content-wrapper equipments-selected hidden-xs">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1 equipment-col">
+                            <h4><strong>Søk:</strong></h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-2 col-md-offset-1 equipment-col">
+                            <select id="taxClass" class="select-equipments form-control">
+                                <option value="Kombinertbil">Kombinertbil</option>
+                                <option value="Lett lastebil">Lett lastebil</option>
+                                <option value="Minibuss">Minibuss</option>
+                                <option value="Personbil">Personbil</option>
+                                <option value="Varebil">Varebil</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 col-md-2 equipment-col">
+                            <select id="make" class="select-equipments form-control">
+                                <option value="Alfa Romeo">Alfa Romeo</option>
+                                <option value="Aston Martin">Aston Martin</option>
+                                <option value="Audi">Audi</option>
+                                <option value="Bentley">Bentley</option>
+                                <option value="BMW">BMW</option>
+                                <option value="Buddy">Buddy</option>
+                                <option value="Buick">Buick</option>
+                                <option value="Cadillac">Cadillac</option>
+                                <option value="Chevrolet">Chevrolet</option>
+                                <option value="Chevrolet US">Chevrolet US</option>
+                                <option value="Chrysler">Chrysler</option>
+                                <option value="Citroën">Citroën</option>
+                                <option value="Dacia">Dacia</option>
+                                <option value="Daewoo">Daewoo</option>
+                                <option value="Daihatsu">Daihatsu</option>
+                                <option value="Dodge">Dodge</option>
+                                <option value="DS">DS</option>
+                                <option value="Ferrari">Ferrari</option>
+                                <option value="Fiat">Fiat</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Ford US">Ford US</option>
+                                <option value="Galloper">Galloper</option>
+                                <option value="GMC">GMC</option>
+                                <option value="Honda">Honda</option>
+                                <option value="Hummer">Hummer</option>
+                                <option value="Hyundai">Hyundai</option>
+                                <option value="Infiniti">Infiniti</option>
+                                <option value="Isuzu">Isuzu</option>
+                                <option value="Iveco">Iveco</option>
+                                <option value="Jaguar">Jaguar</option>
+                                <option value="Jeep">Jeep</option>
+                                <option value="Kia">Kia</option>
+                                <option value="Lada">Lada</option>
+                                <option value="Lamborghini">Lamborghini</option>
+                                <option value="Lancia">Lancia</option>
+                                <option value="Land Rover">Land Rover</option>
+                                <option value="Lexus">Lexus</option>
+                                <option value="Lincoln">Lincoln</option>
+                                <option value="Lotus">Lotus</option>
+                                <option value="Maserati">Maserati</option>
+                                <option value="Mazda">Mazda</option>
+                                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                <option value="MG">MG</option>
+                                <option value="Mini">Mini</option>
+                                <option value="Mitsubishi">Mitsubishi</option>
+                                <option value="Morgan">Morgan</option>
+                                <option value="Multivan">Multivan</option>
+                                <option value="Nissan">Nissan</option>
+                                <option value="Opel">Opel</option>
+                                <option value="Peugeot">Peugeot</option>
+                                <option value="Pontiac">Pontiac</option>
+                                <option value="Porsche">Porsche</option>
+                                <option value="Renault">Renault</option>
+                                <option value="Rover">Rover</option>
+                                <option value="Saab">Saab</option>
+                                <option value="Seat">Seat</option>
+                                <option value="Skoda">Skoda</option>
+                                <option value="Smart">Smart</option>
+                                <option value="Ssangyong">Ssangyong</option>
+                                <option value="Subaru">Subaru</option>
+                                <option value="Suzuki">Suzuki</option>
+                                <option value="Tesla">Tesla</option>
+                                <option value="Think">Think</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Tri-star">Tri-star</option>
+                                <option value="Truckmaster">Truckmaster</option>
+                                <option value="Volkswagen">Volkswagen</option>
+                                <option value="Volvo">Volvo</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 col-md-2 equipment-col">
+                            <select id="model" class="select-equipments form-control">
+                                <option value="Annet">Annet</option>
+                                <option value="Citigo">Citigo</option>
+                                <option value="Fabia">Fabia</option>
+                                <option value="Felicia">Felicia</option>
+                                <option value="Forman">Forman</option>
+                                <option value="Octavia">Octavia</option>
+                                <option value="Octavia RS">Octavia RS</option>
+                                <option value="Octavia Scout">Octavia Scout</option>
+                                <option value="Pickup">Pickup</option>
+                                <option value="Rapid">Rapid</option>
+                                <option value="Rapid Spaceback">Rapid Spaceback</option>
+                                <option value="Roomster">Roomster</option>
+                                <option value="Superb">Superb</option>
+                                <option value="Yeti">Yeti</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 col-md-2 equipment-col">
+                            <select id="fuel" class="select-equipments form-control">
+                                <option value="Bensin">Bensin</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Gass">Gass</option>
+                                <option value="Gass + bensin">Gass + bensin</option>
+                                <option value="Gass + diesel">Gass + diesel</option>
+                                <option value="Strøm">Strøm</option>
+                                <option value="Strøm + bensin">Strøm + bensin</option>
+                                <option value="Strøm + diesel">Strøm + diesel</option>
+                                <option value="Ukjent">Ukjent</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 col-md-2 equipment-col">
+                            <select id="engine" class="select-equipments form-control">
+                                <option value="1.5 105 hk">1.5 105 hk</option>
+                                <option value="1.6 105 hk">1.6 105 hk</option>
+                                <option value="1.6 110 hk">1.6 110 hk</option>
+                                <option value="1.8 105 hk">1.8 105 hk</option>
+                                <option value="1.9 101 hk">1.9 101 hk</option>
+                                <option value="1.9 105 hk">1.9 105 hk</option>
+                                <option value="2.0 110 hk">2.0 110 hk</option>
+                                <option value="2.0 140 hk">2.0 140 hk</option>
+                                <option value="2.0 150 hk">2.0 150 hk</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 col-md-2 col-md-offset-1 equipment-col">
+                            <select id="wheeldrive" class="select-equipments form-control">
+                                <option value="4WD">4WD</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 col-md-2 equipment-col">
+                            <select id="year" class="select-equipments form-control">
+                                <option value="2003">2003</option>
+                                <option value="2004">2004</option>
+                                <option value="2005">2005</option>
+                                <option value="2006">2006</option>
+                                <option value="2007">2007</option>
+                                <option value="2008">2008</option>
+                                <option value="2009">2009</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                                <option value="2013">2013</option>
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 col-md-2 equipment-col">
+                            <select id="transmission" class="select-equipments form-control">
+                                <option value="Automat">Automat</option>
+                                <option value="Manuell">Manuell</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 col-md-2 equipment-col">
+                            <select id="body" class="select-equipments form-control">
+                                <option value="Combi 3">Combi 3</option>
+                                <option value="Combi 5">Combi 5</option>
+                                <option value="Coupe">Coupe</option>
+                                <option value="Sedan">Sedan</option>
+                                <option value="Stasjonsvogn">Stasjonsvogn</option>
+                                <option value="Ukjent">Ukjent</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional package items -->
+            <div class="content-wrapper ">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h4>
+                                <strong>Personbil Skoda Octavia Scout Diesel 4WD Stasjonsvogn</strong>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-3 col-md-offset-1">
+                            <form method="GET" action="search-results-page.html">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-12">
+                                        <div class="form-group">
+                                            <label for="">Utstyrsgruppe:</label>
+                                            <select type="button" class="form-control ">
+                                                <option>Utstyrsgruppe</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-12">
+                                        <div class="form-group">
+                                            <label for="">Km. stand:</label>
+                                            <input class="form-control " pattern="^[ 0-9]+$" placeholder="Km. stand">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-block">
+                                    Submit
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="col-sm-12 col-md-8 additional-equipments">
+                            <div class="">
+                                <div class="">
+                                    <div class="row">
+                                        <label for="">&nbsp;</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="Antiskrens">
+                                                Antiskrens
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="AUX-inngang">
+                                                AUX-inngang
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="Cruisekontroll">
+                                                Cruisekontroll
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                DVD
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Elektrisk sete m. memory
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Elektrisk sete u. memory
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Handsfree opplegg
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Heads Up Display
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Hengerfeste
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Keyless go
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Kjørecomputer
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Klimaanlegg
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Klimaanlegg med flere soner
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Lyssensor
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Navigasjonssystem
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Nivåregulering
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Parkeringsensor
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Parkeringsensor foran
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Radio DAB+
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Regnsensor
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Ryggekamera
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Skinninteriør
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Soltak/glasstak
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Sportsseter
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Takluke
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Vinterhjul
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4 col-md-4 meta-box-item">
+                                            <label>
+                                                <input type="checkbox" value="DVD">
+                                                Xenonlys
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-md-offset-1">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="text-center">
+                <p>
+                    Alle rettigheter forbeholdt Norske Bruktbilpriser / Versjon: 2.0
+                </p>
+                <p>
+                    Ansvarlig utgiver: Sentinel Software AS / CARWEB.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

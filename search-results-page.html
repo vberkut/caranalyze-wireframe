@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NB2 Sketch</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <!--<link href="bootstrap.min.css" rel="stylesheet">-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Date Range Picker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <!-- Slider -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.3/bootstrap-slider.min.js"></script>-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.3/css/bootstrap-slider.min.css">-->
+
+    <!-- Slider -->
+    <script src="libs/noUiSlider-12.1.0/distribute/nouislider.min.js"></script>
+    <link rel="stylesheet" href="libs/noUiSlider-12.1.0/distribute/nouislider.min.css">
+
+
+    <!-- Chart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-new.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Navbar -->
+        <div id="main-navbar" class="nav-header" >
+            <nav class="navbar navbar-default navbar-custom">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">
+                                    Toggle navigation
+                                </span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">Hovedmeny</a></div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="index.html">Nytt søk</a></li>
+                            <li class=""><a href="#/sales">Salgssjef</a></li>
+                        </ul>
+                        <p class="navbar-text navbar-right">Sign out</p>
+                        <!--<form class="navbar-form navbar-right">-->
+                            <!--<div class="form-group">-->
+                                <!--<select class="select-equipments form-control" id="global-filter">-->
+                                    <!--<option value="0">All</option>-->
+                                    <!--<option value="1">ForSale</option>-->
+                                    <!--<option value="2">Sold</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                            <!--<div class="form-group">-->
+                                <!--<select class="select-equipments form-control" id="availability-filter">-->
+                                    <!--<option value="1">all</option>-->
+                                    <!--<option value="2">authorized reseller</option>-->
+                                    <!--<option value="3">other reseller</option>-->
+                                    <!--<option value="4">private</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash;<button type="submit" class="btn btn-default">Submit</button>&ndash;&gt;-->
+                        <!--</form>-->
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="page-wrapper">
+
+            <!--<div class="page-header">-->
+                <!--<img src="images/main-logo.png" alt="" class="page-header__image">-->
+            <!--</div>-->
+
+            <!-- Back button -->
+            <div>
+                <a href="search-page-regnumber.html"><i class="fa fa-angle-left"></i> Redefinere søk</a>
+            </div>
+
+            <!-- Filters -->
+            <div class="content-wrapper search-result-filters">
+                <div class="">
+                    <h1 class="text-center">
+                        <strong>Norske BruktbilPRISER</strong>
+                    </h1>
+                    <br />
+                    <h4 class="text-center">
+                        <strong>TV 89164 Volvo XC90 Inscription, Km: 123 000</strong>
+                    </h4>
+                    <br />
+                    <div class="row">
+                        <!-- Market KPI -->
+                        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-3 col-md-offset-0 market-kpi">
+                            <div class="">
+                                <div>
+                                    <strong>Markedet for tilsvarende biler nå: </strong>
+                                </div>
+                                <br>
+                                <div>
+                                    <strong class="text-primary">Priser:</strong> lav <strong>647 500</strong> / snitt <strong>693 400</strong> / høy <strong>896 900</strong>
+                                </div>
+                                <div>
+                                    <strong class="text-primary">Km:</strong> lav <strong>17 500</strong> / snitt <strong>73 400</strong> / høy <strong>136 900</strong>
+                                </div>
+                                <div>
+                                    <strong class="text-primary">Salgstid:</strong> <strong>52</strong> dager
+                                </div>
+                                <div>
+                                    <strong class="text-primary">Biler solgt siste 60 dager</strong>: 32
+                                </div>
+                                <div>
+                                    <strong class="text-primary">Biler til salgs</strong>: 43
+                                </div>
+                                <div>
+                                    <strong class="text-primary">Dager på nett</strong>: 88
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filters -->
+                        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-1 filters">
+                            <div class="">
+                                <!--<label for="">&nbsp;</label>-->
+                                <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                                    <i class="fa fa-calendar"></i>&nbsp;
+                                    <span></span> <i class="fa fa-caret-down"></i>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="">
+                                <div class="text-center">
+                                    <div>
+                                        <strong>Km: 120 000</strong>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <input type="number" class="form-control" id="mileageFrom" value="75000" placeholder="Min mileage">
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <input type="number" class="form-control" id="mileageTo" value="175000" placeholder="Max mileage">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="mileageFromToSlider"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Global filters -->
+                        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-3 col-md-offset-1 global-filters">
+                            <div class="">
+                                <form class="">
+                                    <div class="form-group">
+                                        <label class="text-primary" for="">Datagrunnlag:</label>
+                                        <br>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Alle
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Til salgs
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Solgt
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="text-primary" for="">Selger:</label>
+                                        <br>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Alle
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Privat
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Merkeforhandler
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">  Annet bilutsalg
+                                        </label>
+                                    </div>
+                                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                                </form>
+                            </div>
+                            <div class="">
+                                <div>
+                                    <strong class="text-primary">Treff rating</strong>
+                                </div>
+                                <div>
+                                    <span class="price-status price-status--green"></span>
+                                    <span>12</span>
+                                </div>
+                                <div>
+                                    <span class="price-status price-status--orange"></span>
+                                    <span>46</span>
+                                </div>
+                                <div>
+                                    <span class="price-status price-status--red"></span>
+                                    <span>98</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KPI -->
+            <!--<div class="content-wrapper">-->
+                <!--<div class="">-->
+                    <!--<div class="row market-kpi-wrapper">-->
+                        <!--<div class="col-sm-10 col-sm-offset-0 col-md-8 col-md-offset-0">-->
+                            <!--<div class="">-->
+                                <!--<h3>Markedet nå</h3>-->
+                                <!--<div class="row">-->
+                                    <!--<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-6 col-md-offset-0">-->
+                                        <!--<div class="market-status-box black"><i class="fa fa-minus"></i>-->
+                                            <!--<strong>Pris: </strong> 259 264-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-6 col-md-offset-0">-->
+                                        <!--<div class="market-status-box black"><i class="fa fa-chevron-down red"></i>-->
+                                            <!--<strong>Antall annonserte biler:</strong> 42 007-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-6 col-md-offset-0">-->
+                                        <!--<div class="market-status-box black"><i class="fa fa-chevron-down red"></i>-->
+                                            <!--<strong>Antall solgte biler:</strong> 28 881-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-6 col-md-offset-0">-->
+                                        <!--<div class="market-status-box black"><i class="fa fa-chevron-down red"></i>-->
+                                            <!--<strong>Salgstid:</strong> 93-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-6 col-md-offset-0">-->
+                                        <!--<div class="market-status-box black"><i class="fa fa-chevron-up green"></i>-->
+                                            <!--<strong>Dager på nett:</strong> 106-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-6 col-md-offset-0">-->
+                                        <!--<div class="market-status-box black"><i class="fa fa-chevron-down red"></i>-->
+                                            <!--<strong>Km. stand:</strong> 94 946-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="alert alert-undefined">-->
+                                        <!--<span>-->
+                                            <!--Wildcard NB-->
+                                        <!--</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="row">-->
+                        <!--<button type="button" class="btn btn-default" style="margin-bottom: 20px;">Rekalkuler</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!-- Selected cars list -->
+            <div class="list-group">
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading"><span class="text-primary">Skoda Oktavia</span></h4>
+                    <p class="list-group-item-text">4x4,TDI,Webasto,navi,kamera,krok+++ / 299000 / 13100</p>
+                </a>
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading"><span class="text-primary">Skoda Oktavia</span></h4>
+                    <p class="list-group-item-text"> 1,6 TDI 105 hk 4X4 Elegance
+                        Hengerfeste / 4WD / Bluetooth / Navigasjon / DAB+ / Parkvarmer Webasto m fj.ktr*Multiratt / 309000 / 19979</p>
+                </a>
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading"><span class="text-primary">Skoda Oktavia</span></h4>
+                    <p class="list-group-item-text">1.6 TDI ELEGANCE / 309000 / 22355</p>
+                </a>
+            </div>
+
+            <!-- Cars list -->
+            <div class="content-wrapper search-result">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">List</a></li>
+                                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Scatter chart</a></li>
+                                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Bar chart</a></li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="home">
+                                        <!-- List -->
+                                        <div class="table-responsive">
+                                            <table class="table table-search-results">
+                                            <tbody>
+                                                <tr>
+                                                    <!-- Price status -->
+                                                    <td class="price-status-col">
+                                                        <span class="price-status price-status--red"></span>
+                                                    </td>
+                                                    <!-- Image -->
+                                                    <td class="hidden-xs">
+                                                        <img src="https://images.finncdn.no/mmo/2016/11/vertical-3/17/5/862/857/45_379350227.jpg" class="car-image">
+                                                    </td>
+                                                    <td>
+                                                        <strong>4x4,TDI,Webasto,navi,kamera,krok+++</strong>
+                                                    </td>
+                                                    <td>
+                                                        <!--Km. stand: -->
+                                                        13 100
+                                                    </td>
+                                                    <td>
+                                                        <!--Årsmodell: -->
+                                                        2015
+                                                    </td>
+                                                    <td class="car-equipment-col">
+                                                        <div>
+                                                            <div class="panel panel-info">
+                                                                <div class="panel-heading bg-info" role="tab" id="headingOne">
+                                                                    <h4 class="panel-title">
+                                                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                            Utstyr
+                                                                            <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+                                                                            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                                                                        </a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                                    <div class="panel-body">
+                                                                        <div class="col-sm-12 col-md-6">
+                                                                            <div class="car-item">
+                                                                                Diesel-partikkelfilter
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Hengerfeste</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Lettmet. felg sommer
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Lettmet. felg vinter
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Metallic lakk</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Parkeringsensor bak
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Sommerhjul</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Takrails</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Vinterhjul</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Xenonlys</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Bagasjeromstrekk</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Cruisekontroll</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Delskinn</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Elektriske speil</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">El.vinduer</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Farget glass</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Handsfree opplegg
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Kjørecomputer</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Klimaanlegg</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Midtarmlene</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Motorvarmer</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Multifunksjonsratt
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Navigasjonssystem
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Oppvarmede seter</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Radio/CD</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Regnsensor</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Sentrallås</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Servostyring</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Sportsseter</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">ABS-bremser</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Airbag foran</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Alarm</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Antiskrens</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Antispinn</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Diff.sperre</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Sideairbager</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Startsperre</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Stålbjelker</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        2015 /
+                                                        <!--Ant. dager -->
+                                                        730
+                                                    </td>
+                                                    <td>
+                                                        129 999
+                                                    </td>
+                                                    <td>
+                                                        <div class="">
+                                                            <input type="checkbox" id="">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <!-- Price status -->
+                                                    <td class="price-status-col">
+                                                        <span class="price-status price-status--red"></span>
+                                                    </td>
+                                                    <!-- Image -->
+                                                    <td class="hidden-xs">
+                                                        <img src="https://images.finncdn.no/mmo/2016/11/vertical-3/17/5/862/857/45_379350227.jpg" class="car-image">
+                                                    </td>
+                                                    <td>
+                                                        <strong>4x4,TDI,Webasto,navi,kamera,krok+++</strong>
+                                                    </td>
+                                                    <td>
+                                                        <!--Km. stand: -->
+                                                        13 100
+                                                    </td>
+                                                    <td>
+                                                        <!--Årsmodell: -->
+                                                        2015
+                                                    </td>
+                                                    <td class="car-equipment-col">
+                                                        <div>
+                                                            <div class="panel panel-info">
+                                                                <div class="panel-heading bg-info" role="tab" id="headingOne">
+                                                                    <h4 class="panel-title">
+                                                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                            Utstyr
+                                                                            <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+                                                                            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                                                                        </a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                                    <div class="panel-body">
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">
+                                                                                Diesel-partikkelfilter
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Hengerfeste</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Lettmet. felg sommer
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Lettmet. felg vinter
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Metallic lakk</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Parkeringsensor bak
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Sommerhjul</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Takrails</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Vinterhjul</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Xenonlys</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Bagasjeromstrekk</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Cruisekontroll</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Delskinn</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Elektriske speil</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">El.vinduer</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Farget glass</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Handsfree opplegg
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Kjørecomputer</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Klimaanlegg</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Midtarmlene</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Motorvarmer</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Multifunksjonsratt
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Navigasjonssystem
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Oppvarmede seter</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Radio/CD</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Regnsensor</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Sentrallås</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Servostyring</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Sportsseter</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">ABS-bremser</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Airbag foran</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Alarm</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Antiskrens</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Antispinn</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Diff.sperre</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Sideairbager</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Startsperre</div>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6">
+                                                                            <div class="car-item">Stålbjelker</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        2015 /
+                                                        <!--Ant. dager -->
+                                                        730
+                                                    </td>
+                                                    <td>
+                                                        129 999
+                                                    </td>
+                                                    <td>
+                                                        <div class="">
+                                                            <input type="checkbox" id="">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="profile">
+                                        <!-- Scatter chart -->
+                                        <canvas id="myScatterChart"></canvas>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="messages">
+                                        <!-- Bar chart -->
+                                        <canvas id="myBarChart"></canvas>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="text-center">
+                <p>
+                    Alle rettigheter forbeholdt Norske Bruktbilpriser / Versjon: 2.0
+                </p>
+                <p>
+                    Ansvarlig utgiver: Sentinel Software AS / CARWEB.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(function() {
+
+            // Date range
+            var start = moment().subtract(29, 'days');
+            var end = moment();
+
+            function cb(start, end) {
+                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+            }
+
+            $('#reportrange').daterangepicker({
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+
+            cb(start, end);
+
+            var mileageFrom = document.getElementById('mileageFrom');
+            var mileageTo = document.getElementById('mileageTo');
+
+            // Slider
+            var slider1 = document.getElementById('mileageFromToSlider');
+            noUiSlider.create(slider1, {
+                start: [120000, 175000],
+                connect: true,
+                range: {
+                    'min': 100000,
+                    'max': 200000
+                },
+
+                behaviour: 'tap-drag',
+
+                // Show a scale with the slider
+                pips: {
+                    mode: 'steps',
+                    stepped: true,
+                    density: 4
+                }
+            });
+            slider1.noUiSlider.on('set', (values, handle, unencoded, tap, positions) => {
+                mileageFrom.value = parseInt(values[0]);
+                mileageTo.value = parseInt(values[1]);
+            });
+
+            // Scatter hart
+            var myScatterChartCtx = document.getElementById('myScatterChart').getContext('2d');
+            var color = Chart.helpers.color;
+            var scatterChartData = {
+                datasets: [{
+                    label: 'Dataset 1',
+                    borderColor: 'rgba(255,0,0)',
+                    pointBackgroundColor: 'rgba(255,0,0)',
+                    showLine: false,
+                    data: [{
+                        x: -10,
+                        y: 0
+                    }, {
+                        x: 0,
+                        y: 10
+                    }, {
+                        x: 10,
+                        y: 5
+                    }, {
+                        x: 120,
+                        y: 35
+                    }, {
+                        x: 10,
+                        y: 53
+                    }, {
+                        x: 100,
+                        y: 23
+                    }, {
+                        x: 60,
+                        y: 33
+                    }, {
+                        x: 40,
+                        y: 13
+                    }]
+                }]
+            };
+            window.myScatterChart = Chart.Scatter(myScatterChartCtx, {
+                data: scatterChartData,
+                options: {
+                    title: {
+                        display: true,
+                        text: ''
+                    },
+                    scales: {
+                        xAxes: [{
+                            type: 'linear',
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Km'
+                            }
+                        }],
+                        yAxes: [{
+                            type: 'linear',
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Price'
+                            }
+                        }]
+                    }
+                }
+            });
+
+
+            // Bar hart
+            var myBarChartCtx = document.getElementById('myBarChart').getContext('2d');
+            var chartData = {
+                labels: ['1', '2', '3', '4', '5', '6', '7', '8'],
+                datasets: [{
+                    type: 'bar',
+                    label: 'Dataset 2',
+                    backgroundColor: 'rgb(0,0,255)',
+                    data: [
+                        100,
+                        -1000,
+                        800,
+                        1800,
+                        1900,
+                        11900,
+                        -20000,
+                        5000,
+                        9000,
+                        -12000
+                    ],
+                    borderColor: 'white',
+                    borderWidth: 2
+                }]
+
+            };
+            window.myBarChart = new Chart(myBarChartCtx, {
+                type: 'bar',
+                data: chartData,
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: ''
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Ad'
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Price'
+                            }
+                        }]
+                    }
+                }
+            });
+
+
+
+        });
+    </script>
+</body>
+</html>

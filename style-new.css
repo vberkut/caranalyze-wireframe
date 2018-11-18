@@ -1,0 +1,213 @@
+
+html, body {
+    height: 100%;
+}
+
+#main-navbar {
+    margin: 15px 0 0 0;
+}
+.navbar-custom {
+    background-color: #337ab7;
+    border-color: #338fd0;
+}
+.navbar-custom .navbar-collapse {
+    border-color: #338fd0;
+}
+.navbar-custom .navbar-brand {
+    color: #fff;
+}
+.navbar-custom .navbar-brand:focus, .navbar-custom .navbar-brand:hover {
+    color: #7fc4ff;
+}
+.navbar-custom .navbar-nav>li>a {
+    color: #fff;
+}
+.navbar-custom .navbar-nav>.active>a {
+    background-color: #20629a;
+    color: #fff;
+}
+.navbar-custom .navbar-nav>.active>a:focus, .navbar-custom .navbar-nav>.active>a:hover {
+    background-color: #20629a;
+    color: #7fc4ff;
+}
+.navbar-custom .navbar-text {
+    color: #fff;
+}
+.navbar-custom .navbar-toggle .icon-bar {
+    color: #fff;
+    background-color: #fff;
+}
+.navbar-custom .navbar-toggle:hover, .navbar-custom .navbar-toggle:focus {
+    background-color: #20629a;
+}
+.navbar-custom .navbar-nav>li>a:focus, .navbar-custom .navbar-nav>li>a:hover {
+    color: #7fc4ff;
+    background-color: transparent;
+}
+
+.page-wrapper {
+
+}
+
+.page-header {
+    text-align: center;
+}
+
+.page-header__image {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.content-wrapper {
+    padding: 20px 0;
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+    margin-bottom: 20px;
+}
+
+.kpi-home-wrapper {
+
+}
+.meta-box {
+    margin-top: 50px;
+}
+
+
+/*#region Selected equipment */
+
+.equipments-selected {
+
+}
+.equipments-selected .row {
+    margin-bottom: 10px;
+}
+.equipment-col {
+    margin-bottom: 10px;
+}
+.select-equipments.form-control {
+    width: 100%;
+    float: none;
+    margin: 0;
+}
+
+.additional-equipments label {
+    font-weight: normal;
+}
+@media only screen and (max-width: 1224px) {
+    .equipments-selected {
+        margin: 0;
+    }
+}
+/* Tablet */
+@media only screen and (max-width: 992px) {
+    .row {
+        /*width: 100%;*/
+    }
+    .equipment-col {
+        margin-bottom: 10px;
+    }
+    .equipment-col:last-child {
+        margin-bottom: 0;
+    }
+}
+/*#endregion */
+
+/*#region Cars list */
+
+.search-result-filters .market-kpi {
+
+}
+.search-result-filters .filters {
+
+}
+.search-result-filters .global-filters {
+
+}
+
+.search-result .tab-pane {
+    padding: 20px 0 0 0;
+}
+
+.table-search-results tbody tr td {
+    /*vertical-align: middle;*/
+}
+
+.price-status-col .price-status {
+    margin-top: 30px;
+}
+.price-status {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #333;
+    border-radius: 45%;
+    /*vertical-align: middle;*/
+}
+.price-status--red {
+    background-color: #ff3d3d;
+}
+.price-status--orange {
+    background-color: #f0ad4e;
+}
+.price-status--green {
+    background-color: #1fe03d;
+}
+
+.car-image {
+    width: 100px;
+    height: auto;
+    max-height: 80px;
+}
+.car-equipment-col {
+    width: 30%;
+}
+.car-equipment-col .panel {
+    margin: 0;
+}
+.car-equipment-col .car-item {
+    font-size: 0.9em;
+}
+
+/* Tablet */
+@media only screen and (max-width: 992px) {
+    .search-result-filters .market-kpi {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+    .search-result-filters .filters {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 70px;
+        margin-bottom: 30px;
+    }
+    .search-result-filters .global-filters {
+
+    }
+
+    .car-equipment-col {
+        width: 35%;
+    }
+    .car-equipment-col .panel-body {
+        padding: 10px 0;
+    }
+    .car-equipment-col .car-item {
+        margin-bottom: 10px;
+        font-size: 0.85em;
+    }
+}
+/* Mobile */
+@media only screen and (max-width: 768px) {
+    .price-status-col .price-status {
+        margin-top: 0;
+    }
+}
+/*#endregion*/
+
+.footer {
+    background-color: #20629a;
+    color: #fff;
+    padding: 30px 30px 20px 30px;
+    margin: 0 0 15px 0;
+}
