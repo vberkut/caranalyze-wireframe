@@ -73,6 +73,15 @@ html, body {
 .meta-box {
     margin-top: 50px;
 }
+.radio-inline+.radio-inline {
+    margin-left: 0px;
+}
+.radio-inline {
+    margin-right: 10px;
+}
+.radio-inline:last-child {
+    margin-right: 0px;
+}
 
 
 /*#region Selected equipment */
@@ -100,6 +109,11 @@ html, body {
         margin: 0;
     }
 }
+@media only screen and (max-width: 1224px) and (min-width: 992px) {
+    .search-result-filters .filters {
+        padding: 5px 7px;
+    }
+}
 /* Tablet */
 @media only screen and (max-width: 992px) {
     .row {
@@ -110,7 +124,7 @@ html, body {
     }
     .equipment-col:last-child {
         margin-bottom: 0;
-    }
+    }    
 }
 /*#endregion */
 
@@ -169,9 +183,12 @@ html, body {
 .car-equipment-col .car-item {
     font-size: 0.9em;
 }
+.show-mobile{
+    display: none;
+}
 
 /* Tablet */
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
     .search-result-filters .market-kpi {
         border-bottom: 1px solid #ccc;
         padding-bottom: 30px;
@@ -201,6 +218,35 @@ html, body {
 @media only screen and (max-width: 768px) {
     .price-status-col .price-status {
         margin-top: 0;
+    }
+    .noUi-value-large:nth-child(2) {
+        -webkit-transform: translate(-10%,60%);
+        transform: translate(-10%,60%);
+    }
+    .noUi-value-large:last-of-type {
+        -webkit-transform: translate(-90%,60%);
+        transform: translate(-90%,60%);
+    }
+    .table-search-results tr td{
+        display: block;
+    }
+    .table-search-results tr{
+        border-bottom: 2px solid black;
+    }
+    .show-mobile{
+        display: inline;
+    }
+    .car-equipment-col{
+        width: 100%
+    }
+    .car-equipment-col a{
+        display: block;
+    }
+}
+@media only screen and (max-width: 340px) {
+    .table-responsive {
+        margin-left: 0;
+        width:100%;
     }
 }
 /*#endregion*/
